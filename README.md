@@ -1,4 +1,5 @@
-#VMSiS Music Player
+# VMSiS Music Player
+
 Lightweight music player with painful VMSiS design.
 
     //clone repository
