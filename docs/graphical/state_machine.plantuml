@@ -1,0 +1,20 @@
+@startuml
+scale 600 width
+
+[*] --> Configuration : Open folder
+Configuration: # Folder to open
+Configuration -right-> Adding : Request adding
+Configuration --> Cancelled : Cancel adding
+Adding --> Added : Succeeded 
+
+
+state Adding {
+  [*] --> findAllMusic: Go to folder
+  findAllMusic --> return: Return a list of mucis to UI
+}
+
+Added --> [*]
+Cancelled --> [*]
+
+
+@enduml

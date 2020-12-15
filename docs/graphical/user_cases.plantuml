@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+
+package Users {
+    actor User
+    User as "User"
+
+}
+
+package APP {
+  usecase "Choose folder" as UC1
+  usecase "Play music" as UC2
+  usecase "Shuffle" as UC3
+  usecase "Next" as UC4
+  usecase "Previous" as UC5
+  usecase "Sorting" as UC6
+}
+
+package Services {
+  usecase "Player" as UC7
+  usecase "UI" as UC8
+}
+
+
+UC2 -- UC7
+UC4 -- UC7
+UC5 -- UC7
+
+UC8 -- UC3
+UC8 -- UC6
+UC8 -- UC1
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+
+
+@enduml

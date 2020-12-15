@@ -1,0 +1,9 @@
+@startuml Component&Deployment
+
+left to right direction
+
+node "Client"{
+  [JS Bundle] -up-> [Electron(Chromium)]: use
+}
+@enduml
+ 
