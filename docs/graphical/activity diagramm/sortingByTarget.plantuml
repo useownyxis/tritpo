@@ -1,0 +1,18 @@
+@startuml
+
+
+
+(*)--> "Get data of sorting music" 
+note right: Input parameters: target - on which of the fields need to sort
+if "Is music already sorted by this field?" then
+    -->[true] "Mark that sorting is reverse"
+    --> "Sort music in reverse position"
+    --> "Output new list of music"
+
+else 
+    -->[false] "Sort music on target"
+    -->"Mark that sorting is not reverse"
+    --> "Output new list of music"
+-->(*)
+
+@enduml

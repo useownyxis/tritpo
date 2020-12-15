@@ -1,0 +1,86 @@
+@startuml
+class Main {
+    -_Player: Player
+    -_UI: View
+    -_sortedBy: Element
+    -_originalFiles: Array
+    -_files: Array
+    -_titlebar: Titlebar
+    -_createTitlebar():undefined
+    +constructor(): Object
+    +sort(Event): undefined
+    +revertSorting(): undefined
+    +backupFiles(): undefined
+}
+
+class PermissionCheck {
+    +constructor(): Object
+}
+
+class Player {
+    -_UI: View
+    -_audioPlayer: Audio
+    -_index: Number
+    -_playInterval: undefined
+    -_repeat: Boolean
+    -_isShuffled: Boolean
+    +constructor(View): Object
+    +play(String, View, Main): undefined
+    +next(View, Main): undefined
+    +previous(View, Main): undefined
+    +setVolume(Number): undefined
+    +stop(View): undefined
+    +preloadHead(View, Main): undefined
+    +playPause(): undefined
+    +setProgress(Number): undefined
+    +toggleShuffle(Main, View): undefined
+    +reshuffleOnClick(Main, View, String): undefined
+    -_shuffleFiles(Array): Array
+    -_shuffle(Main, View): undefined
+    -_unshuffle(Main): undefined
+    
+}
+
+class View {
+    -_currentlyPlaying: Element
+    -_list: Array<Element>
+    -_folderButton: Array<Element>
+    -_playButton: Array<Element>
+    -_forward: Array<Element>
+    -_backward: Array<Element>
+    -_shuffle: Array<Element>
+    -_repeat: Array<Element>
+    -_sortByName: Array<Element>
+    -_sortByAlbum: Array<Element>
+    -_sortByArtist: Array<Element>
+    -_search: Array<Element>
+    -_volume: Array<Element>
+    -_timerEnd: Array<Element>
+    -_timerStart: Array<Element>
+    -_albumCover: Array<Element>
+    -_songName: Array<Element>
+    -_artist: Array<Element>
+    -_progress: Array<Element>
+    -_updateInterval: Object
+    -_albumCoverImage: Element<Image>
+    +constructor(Main, Player): Object
+    +search(Event): undefined
+    +listFiles(Array<String>, Boolean, Main, Player): undefined
+    +resetUI(): undefined
+    +updateSongListMetaData(Main): Array<Element>
+    +markSort(Element): undefined
+    +unmarkSort(Element): undefined
+    +updateUI(Main, Player): undefined
+    +togglePlayButton(Player): undefined
+    +updateTitlebarColor(Main, Element<Image>): undefined
+    -_toggleRepeat(Player): undefined
+    -_getElem(String): Element
+    -_toggleShuffle(Main, Player): undefined
+}
+
+View *-- Player: contains
+View *-- Main: contains
+Player *-- Main: contains
+
+
+@enduml

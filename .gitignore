@@ -9,3 +9,4 @@ dist/*
 !dist/package.json
 !dist/package-lock.json
 Violin.md
+music/

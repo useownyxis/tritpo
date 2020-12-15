@@ -1,0 +1,23 @@
+@startuml
+actor User
+User -> UI: open app
+UI --> User: app will be open
+
+User -> UI: open folder
+UI --> User: list of music
+
+User -> UI: play music
+UI -> Player: play song
+Player --> UI: song will be start
+UI --> User: sounds in headphones
+
+User -> UI: shuffle music
+User <-- UI: list of shuffled music
+
+User -> UI: decrease volume
+UI -> Player: update volume
+Player --> UI: decreases the volume
+UI --> User: music is quieter
+
+
+@enduml

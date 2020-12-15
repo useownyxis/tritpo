@@ -1,0 +1,13 @@
+@startuml
+
+(*) -->  "Get data about playing music"
+if "Is music on pause?" then
+    -->[true] "Play music(really?)"
+    --> "Update UI"
+    --> (*)
+
+else 
+    -->[false] "Pause music(really? x2)"
+    -->"Update UI"
+
+@enduml

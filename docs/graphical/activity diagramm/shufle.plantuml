@@ -1,0 +1,11 @@
+@startuml
+start
+:Get array of songs;
+repeat  :Choose 2 random numbers;
+    if (first>second?) then
+    :Choose 2 random index;
+    :Swap elements with this index;
+endif
+repeat while (Number of iterations are less than size of array)
+stop
+@enduml
